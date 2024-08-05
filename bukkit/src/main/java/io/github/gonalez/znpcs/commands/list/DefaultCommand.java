@@ -132,6 +132,10 @@ public class DefaultCommand extends Command {
       Utils.sendMessage(sender, getConfig(MessagesConfiguration.class).incorrectUsage);
       return;
     }
+    if (!args.get(1).contains("true")){
+      sender.sendMessage("Do you really want to delete the NPC? Type the command again with true behind it");
+      return;
+    }
     Integer id = Ints.tryParse(args.get(0));
     if (id == null) {
       Utils.sendMessage(sender, getConfig(MessagesConfiguration.class).invalidNumber);
