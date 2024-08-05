@@ -65,7 +65,7 @@ public class ConversationProcessor {
             if (conversationKey.getSoundName() != null && conversationKey
               .getSoundName().length() > 0)
               try {
-                if (conversationKey.getSoundName().startsWith("minecraft:")){
+                if (conversationKey.getSoundName().contains(":")){
                   ConversationProcessor.this.player.playSound(ConversationProcessor.this.player.getLocation(), conversationKey.getSoundName(), 1.0F, 1.0F);
                 }
                 else {
